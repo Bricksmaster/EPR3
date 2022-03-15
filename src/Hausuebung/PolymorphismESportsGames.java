@@ -1,46 +1,53 @@
 package Hausuebung;
 
 public class PolymorphismESportsGames {
-    class ESportsGame{
+    class ESportsGame {
         String name;
 
-        public void statement(){
+        public void statement() {
 
         }
     }
 
-    class Shooter extends ESportsGame{
-    }
-    class MOBA extends ESportsGame{
+    class Shooter extends ESportsGame {
+        @Override
+        public void statement() {
+            System.out.println("Shooter is an ESports genre");
+        }
     }
 
-    class LeagueofLegends extends MOBA{
+    class MOBA extends ESportsGame {
+    }
+
+    class LeagueofLegends extends MOBA {
         @Override
         public void statement() {
             System.out.println("League of Legends is a MOBA Game by Riot Games");
         }
     }
-    class Dota2 extends MOBA{
+
+    class Dota2 extends MOBA {
         @Override
         public void statement() {
             System.out.println("Dota2 is a MOBA Game by Valve");
         }
     }
 
-    class CSGO extends Shooter{
+    class CSGO extends Shooter {
         @Override
         public void statement() {
             System.out.println("Cs:Go is a Shooter Game by Valve");
         }
     }
-    class Valorant extends Shooter{
+
+    class Valorant extends Shooter {
         @Override
         public void statement() {
             System.out.println("Valorant is a Shooter Game by Riot Games");
         }
     }
 
-    public void print(){
+    public void print() {
         ESportsGame eSportsGame = new Valorant();
         eSportsGame.statement();
 
@@ -52,6 +59,9 @@ public class PolymorphismESportsGames {
 
         ESportsGame eSportsGame3 = new Dota2();
         eSportsGame3.statement();
+
+        ESportsGame eSportsGame4 = new Shooter();
+        eSportsGame4.statement();
     }
 
     public static void main(String[] args) {
