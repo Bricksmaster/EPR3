@@ -1,7 +1,7 @@
 package Hausuebung;
 
 public class PolymorphismESportsGames {
-    class ESportsGame {
+    abstract class ESportsGame {
         String name;
 
         public void statement() {
@@ -16,7 +16,7 @@ public class PolymorphismESportsGames {
         }
     }
 
-    class MOBA extends ESportsGame {
+    abstract class MOBA extends ESportsGame {
     }
 
     class LeagueofLegends extends MOBA {
